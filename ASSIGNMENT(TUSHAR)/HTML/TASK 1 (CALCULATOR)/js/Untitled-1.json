@@ -1,0 +1,7 @@
+<input id="data" value="Hello " />
+<div id="results">xx</div>
+function() {
+    var userdata = document.getElementById('data').value,
+        uRev = userdata.split(" ").reverse().join(" ").split("").reverse().join("");
+    document.getElementById('results').innerHTML = uRev;
+    })();
