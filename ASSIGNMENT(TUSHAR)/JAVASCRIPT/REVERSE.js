@@ -1,19 +1,19 @@
-function reverse(str) {
-  let word = [];
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] != " ") word.unshift(str[i]);
-    else {
-      while (word.length != 0) {
-        process.stdout.write(word[0]);
-        word.shift();
-      }
-      process.stdout.write(" ");
+function reverse(s) {
+    const words = s.split(' ');
+    let rev = ''; 
+    for (let i = 0; i < words.length; i++) {
+        const word = words[i];
+        let revword = '';
+        for (let j = word.length - 1; j >= 0; j--) {
+            revword += word[j];
+        }
+        if (i !== 0) {
+            rev += ' ';
+        }
+        rev += revword;
     }
-  }
-  while (word.length != 0) {
-    process.stdout.write(word[0]);
-    word.shift();
-  }
+    return rev;
 }
-let str = "This is a sunny day";
-reverse(str);
+const input = "This is a sunny day";
+const reversed = reverse(input);
+console.log(reversed);
